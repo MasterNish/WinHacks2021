@@ -1,4 +1,4 @@
 Hey
-you are gy
-print("Your mum gay.")
+you are cool
+print("Your mum is funny.")
 No you
