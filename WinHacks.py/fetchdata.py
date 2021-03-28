@@ -1,19 +1,36 @@
+#   fetchdata.py
+#   Gets league leader statistics from NBA-API and writes to text file "stats.txt"
+
 import pandas as pd
-from nba_api.stats.static import players
-player_dict = players.get_players()
+from nba_api.stats.endpoints import leagueleaders
 
-kd = [player for player in player_dict if player["full_name"] == "Kevin Durant"][0]
-kd_id = kd["id"]
-print(kd_id)
-
-from nba_api.stats.static import teams
-team_dict = teams.get_teams()
-BKN = [team for team in team_dict if team["full_name"] == "Brooklyn Nets"][0]
-print (BKN)
-BKN_id = BKN["id"]
-
-from nba_api.stats.endpoints import playergamelog
-from nba_api.stats.library.parameters import SeasonAll
-
-gamelog_kd = playergamelog.PlayerGameLog(player_id = "201142", season = "2019")
-gamelog_kd_df = gamelog_kd.get_data_frames()[0]
+lleaders2020 = leagueleaders.LeagueLeaders(league_id = "00")
+lleaders_df = lleaders2020.get_data_frames()[0]
+#sort stats
+counter = 0
+PlayerList = []
+for index, row in lleaders_df.iterrows():
+    statlist = []
+    counter += 1
+    if counter <= 40:
+        PPG = round(row["PTS"]/row["GP"],1)
+        RPG = round(row["REB"]/row["GP"],1)
+        APG = round(row["AST"]/row["GP"],1)
+        BPG = round(row["BLK"]/row["GP"],1)
+        SPG = round(row["STL"]/row["GP"],1)
+        statlist.append(row["PLAYER"])
+        statlist.append(row["TEAM"])
+        statlist.append(PPG)
+        statlist.append(RPG)
+        statlist.append(APG)
+        statlist.append(BPG)
+        statlist.append(SPG)
+        PlayerList.append(statlist)
+#write to file
+stats = open("stats.txt", "a")
+for p in PlayerList:
+    x = str(p)
+    y = x.strip("[")
+    z = y.strip("]")
+    stats.write("{} \n".format(z))
+stats.close()
