@@ -52,23 +52,23 @@ Pascal_SiakamPick = Rect(550, 125, 175, 140)
 Paul_GeorgePick = Rect(550, 350, 175, 140)
 
 
-## loading pics for picks
+# loading pics for picks
 # picNames=["WinHacks.py/Pics/lebron.png", "WinHacks.py/Pics/kawhi.png",
 #           "WinHacks.py/Pics/curry.png", "WinHacks.py/Pics/jokic.png",
 #           "WinHacks.py/Pics/giannis.png", "WinHacks.py/Pics/durant.png",
-#
+
 #           "WinHacks.py/Pics/luka.png", "WinHacks.py/Pics/westbrook.png",
 #           "WinHacks.py/Pics/tatum.png", "WinHacks.py/Pics/zach.png",
 #           "WinHacks.py/Pics/harden.png", "WinHacks.py/Pics/zion.png",
-#
+
 #           "WinHacks.py/Pics/beal.png", "WinHacks.py/Pics/trae.png",
 #           "WinHacks.py/Pics/embiid.png", "WinHacks.py/Pics/ben.png",
 #           "WinHacks.py/Pics/randle.png", "WinHacks.py/Pics/lowry.png",
-#
+
 #           "WinHacks.py/Pics/booker.png", "WinHacks.py/Pics/porzingis.png",
 #           "WinHacks.py/Pics/turner.png", "WinHacks.py/Pics/CJ.png",
 #           "WinHacks.py/Pics/brown.png", "WinHacks.py/Pics/kyrie.png",
-#
+
 #           "WinHacks.py/Pics/donovan.png", "WinHacks.py/Pics/davis.png",
 #           "WinHacks.py/Pics/kemba.png", "WinHacks.py/Pics/grant.png",
 #           "WinHacks.py/Pics/siakam.png", "WinHacks.py/Pics/pg.png"]
@@ -235,17 +235,19 @@ while running:
     for evt in event.get():
         for rect in rectList1:
             if rect.collidepoint(mx, my) and evt.type == MOUSEBUTTONUP:
-                if menu == 'p1pick1':
-                    menu = 'p1pick2'
-
-                if menu == 'p1pick2':
-                    menu = 'p1pick3'
+                if menu == 'p1pick4':
+                    menu = 'p1pick5'
 
                 if menu == 'p1pick3':
                     menu = 'p1pick4'
 
-                if menu == 'p1pick4':
-                    menu = 'p1pick5'
+
+                if menu == 'p1pick2':
+                    menu = 'p1pick3'
+
+
+                if menu == 'p1pick1':
+                    menu = 'p1pick2'
 
                 # if menu == 'p1pick5':
                 #     menu = 'p1team review'
