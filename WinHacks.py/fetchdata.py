@@ -12,7 +12,7 @@ PlayerList = []
 for index, row in lleaders_df.iterrows():               # iterate through dataframe
     statlist = []
     counter += 1
-    if counter <= 40:
+    if counter <= 60:
         PPG = round(row["PTS"]/row["GP"],1)             # calculate stat/game
         RPG = round(row["REB"]/row["GP"],1)             
         APG = round(row["AST"]/row["GP"],1)
