@@ -1,9 +1,12 @@
 from pygame import *
 from pygame import movie
 
+## SCREEN------------------------------------------------------------------------
 
 width, height = 800, 600
 screen = display.set_mode((width, height))
+
+## COLORS------------------------------------------------------------------------
 red = (255, 0, 0)
 gray = (127, 127, 127)
 black = (0, 0, 0)
@@ -14,8 +17,7 @@ white = (255, 255, 255)
 bg = (50, 62, 79)
 
 
-
-##RECTANGLES--------------------------------------------------------------------
+## RECTANGLES--------------------------------------------------------------------
 LeBron_JamesPick = Rect(50, 125, 175, 140)
 Kawhi_LeonardPick = Rect(50, 350, 175, 140)
 Stephen_CurryPick = Rect(300, 125, 175, 140)
@@ -60,7 +62,6 @@ Paul_GeorgePick = Rect(550, 350, 175, 140)
 #         PlayerList.append(stats)
 
 
-# [p1.team]
 
 
 
@@ -112,7 +113,7 @@ for name in picNames:
     myPicList.append(picc)
 
 rectList1 = [LeBron_JamesPick, Kawhi_LeonardPick, Stephen_CurryPick,
-            Nikola_JokicPick, GiannisPick, Kevin_DurantPick]
+            Nikola_JokicPick, GiannisPick, Kevin_DurantPick]                    #list of rect objects for each pick
 
 rectList2 = [Luka_DoncicPick, Russell_WestbrookPick, Jayson_TatumPick,
             Zach_LavinePick, James_HardenPick, Zion_WilliamsonPick]
@@ -132,6 +133,8 @@ P2Team = []
 count = 0
 menu = 'p1pick1'
 
+
+## MENU SCREEN FUNCTIONS-----------------------------------------------------------
 def p1pick1():
     global P1Team
     count = 0
